@@ -1,0 +1,61 @@
+@import 'tailwindcss';
+
+@source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
+@source '../../storage/framework/views/*.php';
+
+@theme {
+    --font-sans: 'Plus Jakarta Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
+        'Segoe UI Symbol', 'Noto Color Emoji';
+    --font-display: 'Poppins', ui-sans-serif, system-ui, sans-serif;
+
+    --color-gold-50: #fffbea;
+    --color-gold-100: #fef3c7;
+    --color-gold-200: #fde68a;
+    --color-gold-300: #fcd34d;
+    --color-gold-400: #fbbf24;
+    --color-gold-500: #f2a90f;
+    --color-gold-600: #d97706;
+    --color-gold-700: #b45309;
+    --color-gold-800: #8a3f0d;
+    --color-gold-900: #5c2a0a;
+
+    --color-ink-900: #201a10;
+    --color-ink-800: #35281a;
+}
+
+html {
+    scroll-behavior: smooth;
+    color-scheme: light;
+}
+
+[x-cloak] {
+    display: none !important;
+}
+
+body {
+    background-color: var(--color-gold-50);
+}
+
+@keyframes fade-up {
+    from {
+        opacity: 0;
+        transform: translateY(16px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.animate-fade-up {
+    animation: fade-up 0.6s ease-out both;
+}
+
+.text-shadow-soft {
+    text-shadow: 0 2px 12px rgba(0, 0, 0, 0.25);
+}
+
+.bg-noise {
+    background-image: radial-gradient(circle at 1px 1px, rgba(0, 0, 0, 0.035) 1px, transparent 0);
+    background-size: 18px 18px;
+}

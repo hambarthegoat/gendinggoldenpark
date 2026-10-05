@@ -1,0 +1,30 @@
+@props(['dark' => false, 'iconOnly' => false, 'reactive' => false])
+
+<a href="{{ route('home') }}" {{ $attributes->class(['flex items-center gap-2.5 shrink-0']) }}>
+    <svg viewBox="0 0 48 48" class="h-9 w-9 md:h-10 md:w-10 shrink-0" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+            <linearGradient id="ggpGold" x1="4" y1="4" x2="44" y2="44" gradientUnits="userSpaceOnUse">
+                <stop offset="0" stop-color="#fde68a" />
+                <stop offset="0.5" stop-color="#f2a90f" />
+                <stop offset="1" stop-color="#b45309" />
+            </linearGradient>
+        </defs>
+        <rect x="1" y="1" width="46" height="46" rx="13" fill="url(#ggpGold)" />
+        <circle cx="24" cy="20" r="7" fill="#fffbea" fill-opacity="0.9" />
+        <path d="M12 34.5c1.2-6.8 6-11.5 12-11.5s10.8 4.7 12 11.5c.2 1-.6 1.5-1.4 1.5H13.4c-.8 0-1.6-.5-1.4-1.5Z" fill="#5c2a0a" />
+        <path d="M24 12.5 9 24h5v11h20V24h5L24 12.5Z" fill="#201a10" />
+        <path d="M20.5 35v-7h7v7" stroke="#fde68a" stroke-width="1.6" stroke-linejoin="round" />
+    </svg>
+
+    @unless($iconOnly)
+        <span class="flex flex-col leading-[1.05]">
+            <span
+                class="font-display font-extrabold tracking-wide text-[15px] md:text-lg {{ $reactive ? '' : ($dark ? 'text-gold-50' : 'text-ink-900') }}"
+                @if($reactive) :class="scrolled ? 'text-ink-900' : 'text-gold-50'" @endif
+            >GENDING</span>
+            <span
+                class="font-display font-extrabold tracking-wide text-[15px] md:text-lg -mt-0.5 bg-gradient-to-r from-gold-500 via-gold-600 to-gold-700 bg-clip-text text-transparent">GOLDEN
+                PARK</span>
+        </span>
+    @endunless
+</a>
