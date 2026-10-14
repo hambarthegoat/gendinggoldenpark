@@ -128,6 +128,16 @@ Untuk hot-reload aset frontend saja (CSS/JS) saat development, jalankan di termi
 npm run dev
 ```
 
+## Akses dari Luar Jaringan (Cloudflare Tunnel)
+
+Untuk berbagi situs sementara lewat internet, install [`cloudflared`](https://developers.cloudflare.com/cloudflare-one/connections/connect-networks/downloads/) (`winget install Cloudflare.cloudflared`), lalu jalankan:
+
+```powershell
+powershell -ExecutionPolicy Bypass -File scripts\tunnel.ps1
+```
+
+Skrip menjalankan server + tunnel dan mencetak URL `https://*.trycloudflare.com`. Keduanya dihidupkan ulang otomatis kalau mati. URL berubah setiap tunnel dibuat ulang. Panel `/admin` ikut terbuka ke publik, jadi ganti password admin default lebih dulu.
+
 ## Build Aset Frontend (Production)
 
 ```sh
