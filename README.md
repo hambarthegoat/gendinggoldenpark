@@ -1,58 +1,200 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# Gending Golden Park
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+Website landing page dan panel admin untuk perumahan **Gending Golden Park**, dibangun dengan [Laravel 13](https://laravel.com) dan [Filament 5](https://filamentphp.com) sebagai admin panel.
 
-## About Laravel
+## Daftar Isi
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+- [Teknologi](#teknologi)
+- [Prasyarat](#prasyarat)
+- [Instalasi (clone pertama kali)](#instalasi-clone-pertama-kali)
+- [Konfigurasi Environment (`.env`)](#konfigurasi-environment-env)
+- [Menjalankan Server Development](#menjalankan-server-development)
+- [Build Aset Frontend (Production)](#build-aset-frontend-production)
+- [Panel Admin](#panel-admin)
+- [Testing](#testing)
+- [Struktur Proyek](#struktur-proyek)
+- [Deployment ke Production](#deployment-ke-production)
+- [Troubleshooting](#troubleshooting)
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+## Teknologi
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+- **Backend:** PHP 8.3+, Laravel 13
+- **Admin Panel:** Filament 5
+- **Frontend:** Blade, Alpine.js, Tailwind CSS 4, Vite
+- **Database:** SQLite (default, siap pakai tanpa setup server DB)
+- **Testing:** PHPUnit
 
-## Learning Laravel
+## Prasyarat
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+Pastikan sudah terpasang di device:
 
-In addition, [Laracasts](https://laracasts.com) contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+- **PHP** `^8.3` beserta ekstensi umum Laravel: `pdo_sqlite`, `sqlite3`, `mbstring`, `openssl`, `tokenizer`, `xml`, `ctype`, `curl`
+- **Composer** `2.x`
+- **Node.js** `18+` dan **npm** (untuk build aset Vite/Tailwind)
+- **Git**
 
-You can also watch bite-sized lessons with real-world projects on [Laravel Learn](https://laravel.com/learn), where you will be guided through building a Laravel application from scratch while learning PHP fundamentals.
+Cek versi yang terpasang:
 
-## Agentic Development
-
-Laravel's predictable structure and conventions make it ideal for AI coding agents like Claude Code, Cursor, and GitHub Copilot. Install [Laravel Boost](https://laravel.com/docs/ai) to supercharge your AI workflow:
-
-```bash
-composer require laravel/boost --dev
-
-php artisan boost:install
+```sh
+php -v
+composer -V
+node -v
+npm -v
 ```
 
-Boost provides your agent 15+ tools and skills that help agents build Laravel applications while following best practices.
+Jika PHP/Composer belum ada, instal lewat [php.new](https://php.new):
 
-## Contributing
+```sh
+# macOS / Linux
+/bin/bash -c "$(curl -fsSL https://php.new/install/linux/8.5)"
+```
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+```powershell
+# Windows PowerShell
+Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://php.new/install/windows/8.5'))
+```
 
-## Code of Conduct
+## Instalasi (clone pertama kali)
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+```sh
+git clone git@github.com:hambarthegoat/gendinggoldenpark.git
+cd gendinggoldenpark
 
-## Security Vulnerabilities
+# 1. Install dependency PHP
+composer install
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+# 2. Salin file environment lalu generate APP_KEY
+cp .env.example .env
+php artisan key:generate
 
-## License
+# 3. Buat file database SQLite (jika belum ada)
+touch database/database.sqlite
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+# 4. Jalankan migrasi + seeder (isi data awal: admin, konten landing, dsb.)
+php artisan migrate --seed
+
+# 5. Install dependency JS & build aset frontend
+npm install
+npm run build
+```
+
+Atau jalankan semuanya sekaligus lewat script Composer yang sudah disediakan:
+
+```sh
+composer run setup
+```
+
+> Script `setup` di `composer.json` melakukan: `composer install` → salin `.env` → `key:generate` → `migrate --force` → `npm install` → `npm run build`. Setelah itu jalankan sendiri `php artisan db:seed` jika butuh data awal (admin & konten landing), karena script ini tidak menyertakan seeding.
+
+## Konfigurasi Environment (`.env`)
+
+Setelah `.env` dibuat dari `.env.example`, sesuaikan nilai-nilai berikut sebelum dipakai:
+
+| Variable | Keterangan | Default |
+|---|---|---|
+| `APP_URL` | URL aplikasi | `http://localhost:8000` |
+| `DB_CONNECTION` | Driver database | `sqlite` (tidak perlu host/user/password) |
+| `ADMIN_EMAIL` | Email login panel admin (`/admin`) | `user` — **wajib diganti** |
+| `ADMIN_PASSWORD` | Password login panel admin | `password` — **wajib diganti** |
+| `COMPANY_WHATSAPP` | Nomor WhatsApp yang tampil di landing page | contoh placeholder |
+| `COMPANY_PHONE_DISPLAY` | Nomor telepon yang ditampilkan | contoh placeholder |
+| `COMPANY_EMAIL` | Email kontak perusahaan | contoh placeholder |
+| `COMPANY_ADDRESS` | Alamat perumahan | contoh placeholder |
+| `COMPANY_MAPS_EMBED` | URL embed Google Maps | contoh placeholder |
+| `COMPANY_INSTAGRAM` / `COMPANY_FACEBOOK` / `COMPANY_TIKTOK` | Link media sosial | contoh placeholder |
+| `MAIL_MAILER` | Driver email (default `log`, ganti untuk kirim email asli) | `log` |
+
+`ADMIN_EMAIL` dan `ADMIN_PASSWORD` dipakai oleh `database/seeders/AdminUserSeeder.php` saat `php artisan db:seed` dijalankan — ganti nilainya di `.env` **sebelum** seeding, atau jalankan ulang seeder setelah mengganti `.env`.
+
+## Menjalankan Server Development
+
+Jalankan server saja:
+
+```sh
+php artisan serve
+```
+
+Aplikasi bisa diakses di `http://127.0.0.1:8000`.
+
+Atau jalankan server + queue listener + log viewer (Pail) + Vite dev server sekaligus (butuh `concurrently`, sudah ada di `devDependencies`):
+
+```sh
+composer run dev
+```
+
+Untuk hot-reload aset frontend saja (CSS/JS) saat development, jalankan di terminal terpisah:
+
+```sh
+npm run dev
+```
+
+## Build Aset Frontend (Production)
+
+```sh
+npm run build
+```
+
+Hasil build masuk ke `public/build/` dan tidak di-commit ke git (lihat `.gitignore`) — jalankan ulang setelah clone atau setiap kali ada perubahan di `resources/css` atau `resources/js`.
+
+## Panel Admin
+
+- URL: `http://<APP_URL>/admin`
+- Login menggunakan `ADMIN_EMAIL` dan `ADMIN_PASSWORD` dari `.env` (dibuat lewat `AdminUserSeeder` saat seeding).
+- Resource yang tersedia: Leads, Stats, Advantages, House Types, Facilities, Gallery Items, Access Points, Testimonials, FAQs, Site Settings.
+
+**Wajib diganti sebelum production:** nilai default `ADMIN_EMAIL=user` / `ADMIN_PASSWORD=password` di `.env.example` hanya untuk development lokal.
+
+## Testing
+
+```sh
+php artisan test
+# atau
+composer run test
+```
+
+## Struktur Proyek
+
+```
+app/
+  Filament/           # Resource, Page, Widget untuk panel admin (/admin)
+  Http/Controllers/   # LandingController, LeadController
+  Models/              # Eloquent model (Lead, Stat, Advantage, HouseType, dll.)
+database/
+  migrations/          # Skema tabel
+  seeders/             # AdminUserSeeder, LandingContentSeeder, DatabaseSeeder
+  database.sqlite       # Database lokal (tidak di-commit)
+resources/
+  views/                # Blade views landing page (partials, components)
+  css/ js/               # Sumber aset Tailwind & Alpine.js
+routes/
+  web.php               # Route landing page (`/`) & form kontak (`/kontak`)
+public/                 # Document root, hasil build Vite masuk ke public/build/
+```
+
+## Deployment ke Production
+
+1. Set `APP_ENV=production` dan `APP_DEBUG=false`.
+2. Pastikan `APP_KEY`, `ADMIN_EMAIL`, `ADMIN_PASSWORD` diganti dengan nilai yang aman (bukan default).
+3. Pertimbangkan pindah dari SQLite ke MySQL/PostgreSQL untuk traffic tinggi (ubah `DB_CONNECTION` dan kredensial terkait di `.env`).
+4. Jalankan:
+   ```sh
+   composer install --no-dev --optimize-autoloader
+   npm ci && npm run build
+   php artisan migrate --force
+   php artisan config:cache
+   php artisan route:cache
+   php artisan view:cache
+   ```
+5. Arahkan web server (Nginx/Apache) ke folder `public/` sebagai document root.
+6. Atur `MAIL_MAILER` dan kredensial SMTP asli jika form kontak perlu mengirim email.
+
+## Troubleshooting
+
+- **`could not find driver (SQLite::__construct)`** — ekstensi PHP `pdo_sqlite` belum aktif, install/enable ekstensi tersebut.
+- **Halaman blank / error 500 saat pertama kali diakses** — pastikan `APP_KEY` sudah di-generate (`php artisan key:generate`) dan `database/database.sqlite` sudah dibuat + dimigrasi.
+- **Aset CSS/JS tidak termuat** — jalankan `npm run build` (production) atau `npm run dev` (development); folder `public/build/` tidak ikut di-commit.
+- **Tidak bisa login ke `/admin`** — pastikan sudah menjalankan `php artisan db:seed` (atau `migrate --seed`) setelah mengatur `ADMIN_EMAIL`/`ADMIN_PASSWORD` di `.env`.
+
+## Lisensi
+
+Proyek ini dibangun di atas framework [Laravel](https://laravel.com), yang berlisensi [MIT](https://opensource.org/licenses/MIT).
