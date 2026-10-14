@@ -4,6 +4,7 @@ namespace App\Filament\Pages;
 
 use App\Models\SiteSetting;
 use BackedEnum;
+use Filament\Forms\Components\FileUpload;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Components\Textarea;
 use Filament\Notifications\Notification;
@@ -45,6 +46,15 @@ class ManageSiteSettings extends Page implements HasSchemas
                     ->description('Teks utama yang tampil paling atas di landing page.')
                     ->columns(2)
                     ->schema([
+                        FileUpload::make('hero_image')
+                            ->label('Gambar Hero')
+                            ->image()
+                            ->imageEditor()
+                            ->disk('public')
+                            ->directory('hero')
+                            ->nullable()
+                            ->helperText('Opsional. Rasio terbaik 4:5 (potret). Jika kosong, ilustrasi bawaan dipakai.')
+                            ->columnSpanFull(),
                         TextInput::make('hero_badge')
                             ->label('Teks Badge')
                             ->required()

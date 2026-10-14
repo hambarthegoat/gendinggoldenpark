@@ -57,6 +57,10 @@
                 <div
                     class="relative aspect-[4/5] w-full overflow-hidden rounded-[2rem] bg-gradient-to-br from-gold-200 via-gold-400 to-gold-700 shadow-2xl ring-1 ring-white/10">
                     <div class="absolute inset-0 bg-noise opacity-20"></div>
+                    @if ($settings->hero_image)
+                        <img src="{{ \Illuminate\Support\Facades\Storage::disk('public')->url($settings->hero_image) }}"
+                            alt="{{ $settings->company_name }}" class="absolute inset-0 h-full w-full object-cover">
+                    @else
                     <svg viewBox="0 0 400 500" class="absolute inset-0 h-full w-full" preserveAspectRatio="xMidYMax slice">
                         <rect width="400" height="500" fill="url(#skyGrad)" />
                         <defs>
@@ -75,6 +79,7 @@
                         <path d="M0 445 q50 -20 100 0 t100 0 t100 0 t100 0" stroke="#fffbea" stroke-opacity="0.3"
                             stroke-width="3" fill="none" />
                     </svg>
+                    @endif
                 </div>
 
                 <div class="absolute -bottom-6 -left-6 hidden rounded-2xl bg-white p-4 shadow-xl sm:flex items-center gap-3 max-w-[220px]">
