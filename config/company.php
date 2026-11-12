@@ -5,8 +5,8 @@ return [
     'tagline' => 'Hunian Asri, Investasi Berharga',
 
     // Ganti dengan nomor WhatsApp asli (format 62xxxxxxxxxx, tanpa tanda + atau spasi)
-    'whatsapp' => env('COMPANY_WHATSAPP', '6281234567890'),
-    'phone_display' => env('COMPANY_PHONE_DISPLAY', '0812-3456-7890'),
+    'whatsapp' => env('COMPANY_WHATSAPP', '62895630703554'),
+    'phone_display' => env('COMPANY_PHONE_DISPLAY', '0895-6307-03554'),
     'email' => env('COMPANY_EMAIL', 'info@gendinggoldenpark.id'),
 
     'address' => env('COMPANY_ADDRESS', 'Perumahan Gending Golden Park, Desa Pikatan, Kec. Gending, Kab. Probolinggo, Jawa Timur 67272'),

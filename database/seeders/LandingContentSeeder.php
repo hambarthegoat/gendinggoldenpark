@@ -203,8 +203,8 @@ class LandingContentSeeder extends Seeder
 
             'company_name' => 'Gending Golden Park',
             'company_tagline' => 'Hunian Asri, Investasi Berharga',
-            'whatsapp' => env('COMPANY_WHATSAPP', '6281234567890'),
-            'phone_display' => env('COMPANY_PHONE_DISPLAY', '0812-3456-7890'),
+            'whatsapp' => env('COMPANY_WHATSAPP', '62895630703554'),
+            'phone_display' => env('COMPANY_PHONE_DISPLAY', '0895-6307-03554'),
             'email' => env('COMPANY_EMAIL', 'info@gendinggoldenpark.id'),
             'address' => env('COMPANY_ADDRESS', 'Perumahan Gending Golden Park, Desa Pikatan, Kec. Gending, Kab. Probolinggo, Jawa Timur 67272'),
             'maps_embed_src' => env('COMPANY_MAPS_EMBED', 'https://www.google.com/maps?q=-7.7937642,113.3191946&z=17&output=embed'),
