@@ -5,7 +5,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>{{ $settings->company_name }} — {{ $settings->company_tagline }}</title>
+    <title>Gending Golden Park</title>
     <meta name="description"
         content="{{ $settings->company_name }}, perumahan modern dengan lingkungan asri, keamanan 24 jam, dan lokasi strategis. Wujudkan rumah impian Anda sekarang.">
     <meta name="theme-color" content="#f2a90f">
