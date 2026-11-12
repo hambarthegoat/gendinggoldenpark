@@ -103,7 +103,7 @@ class LandingContentSeeder extends Seeder
     {
         $rows = [
             ['icon' => 'shield-check', 'name' => 'Keamanan 24 Jam', 'desc' => 'Cluster tertutup dengan satpam & CCTV berkeliling.'],
-            ['icon' => 'sparkles', 'name' => 'Taman & RTH', 'desc' => 'Ruang terbuka hijau untuk bersantai bersama keluarga.'],
+            ['icon' => 'tree', 'name' => 'Taman & RTH', 'desc' => 'Ruang terbuka hijau untuk bersantai bersama keluarga.'],
             ['icon' => 'mosque', 'name' => 'Masjid', 'desc' => 'Sarana ibadah yang nyaman di dalam kawasan.'],
             ['icon' => 'swim', 'name' => 'Kolam Renang', 'desc' => 'Fasilitas rekreasi keluarga di akhir pekan.'],
             ['icon' => 'run', 'name' => 'Jogging Track', 'desc' => 'Area olahraga untuk gaya hidup sehat setiap hari.'],

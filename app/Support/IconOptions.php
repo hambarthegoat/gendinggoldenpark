@@ -11,7 +11,7 @@ class IconOptions
     {
         $names = [
             'shield-check', 'shield', 'sparkles', 'mosque', 'swim', 'run', 'kids',
-            'road', 'water', 'location', 'design', 'facility', 'check', 'chevron-down',
+            'road', 'tree', 'water', 'location', 'design', 'facility', 'check', 'chevron-down',
             'menu', 'close', 'star', 'arrow-right', 'whatsapp', 'phone', 'mail',
             'clock', 'instagram', 'facebook', 'tiktok', 'quote',
         ];

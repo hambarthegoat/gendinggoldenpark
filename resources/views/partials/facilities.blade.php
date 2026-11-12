@@ -12,13 +12,13 @@
                 keluarga modern.</p>
         </div>
 
-        <div class="mt-10 grid grid-cols-3 gap-2.5 sm:gap-4 md:mt-14 md:gap-5 lg:grid-cols-4">
+        <div class="mt-10 flex flex-wrap justify-center gap-2.5 sm:gap-4 md:mt-14 md:gap-5">
             @foreach ($facilities as $facility)
                 <div
-                    class="group rounded-2xl border border-white/10 bg-white/5 p-3 text-center sm:p-5 md:p-6 backdrop-blur-sm transition-all hover:border-gold-500/50 hover:bg-white/10">
+                    class="group basis-[calc((100%-1.25rem)/3)] sm:basis-[calc((100%-2rem)/3)] md:basis-[calc((100%-2.5rem)/3)] lg:basis-[calc((100%-3.75rem)/4)] rounded-2xl border border-white/10 bg-white/5 p-3 text-center sm:p-5 md:p-6 backdrop-blur-sm transition-all hover:border-gold-500/50 hover:bg-white/10">
                     <div
-                        class="mx-auto flex h-10 w-10 items-center justify-center rounded-xl md:h-14 md:w-14 md:rounded-2xl bg-gold-500/15 text-gold-300 ring-1 ring-gold-500/30 transition-transform group-hover:scale-110">
-                        <x-icon :name="$facility['icon']" class="h-5 w-5 md:h-7 md:w-7" />
+                        class="mx-auto flex h-12 w-12 items-center justify-center rounded-xl md:h-14 md:w-14 md:rounded-2xl bg-gold-500/15 text-gold-300 ring-1 ring-gold-500/30 transition-transform group-hover:scale-110">
+                        <x-icon :name="$facility['icon']" class="h-6 w-6 md:h-7 md:w-7" />
                     </div>
                     <h3 class="mt-3 font-display text-xs font-bold text-white md:mt-4 md:text-sm">{{ $facility['name'] }}</h3>
                     <p class="mt-1 text-[10px] leading-snug text-gold-100/55 md:mt-1.5 md:text-xs md:leading-relaxed">{{ $facility['desc'] }}</p>

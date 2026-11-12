@@ -21,43 +21,40 @@
         @break
 
         @case('mosque')
-            <path d="M12 3v2.2M12 5.2a2 2 0 1 1 0 4 2 2 0 0 1 0-4z" stroke="currentColor" stroke-width="1.6"
-                stroke-linecap="round" />
-            <path d="M6 21v-6.5c0-2.6 2.7-4.7 6-4.7s6 2.1 6 4.7V21" stroke="currentColor" stroke-width="1.7"
-                stroke-linejoin="round" />
-            <path d="M3 21h18M4.5 21v-3.2c0-1 .7-1.8 1.5-1.8s1.5.8 1.5 1.8V21M16.5 21v-3.2c0-1 .7-1.8 1.5-1.8s1.5.8 1.5 1.8V21"
-                stroke="currentColor" stroke-width="1.5" stroke-linecap="round" />
-            <path d="M10.3 21v-3.6a1.7 1.7 0 0 1 3.4 0V21" stroke="currentColor" stroke-width="1.5" />
+            <path d="M12 2.5v2" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" />
+            <path d="M7 12a5 5 0 0 1 10 0" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" />
+            <path d="M5 21V12h14v9" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" />
+            <path d="M10 21v-3.5a2 2 0 0 1 4 0V21" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" />
+            <path d="M3 21h18" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" />
+            <path d="M12 4.5c-1.8 1.3-2.8 2.8-3 4.5h6c-.2-1.7-1.2-3.2-3-4.5z" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" />
         @break
 
         @case('swim')
-            <circle cx="6.5" cy="6" r="1.6" fill="currentColor" />
-            <path d="M9 10.5l3.5-2.3a1.6 1.6 0 0 1 2 .2l1.7 1.7 3.3-1.4" stroke="currentColor" stroke-width="1.6"
-                stroke-linecap="round" stroke-linejoin="round" />
-            <path d="M3 15.5c1.3 1.2 2.6 1.2 3.9 0 1.3-1.2 2.6-1.2 3.9 0 1.3 1.2 2.6 1.2 3.9 0 1.3-1.2 2.6-1.2 3.9 0"
-                stroke="currentColor" stroke-width="1.6" stroke-linecap="round" />
-            <path d="M3 19.5c1.3 1.2 2.6 1.2 3.9 0 1.3-1.2 2.6-1.2 3.9 0 1.3 1.2 2.6 1.2 3.9 0 1.3-1.2 2.6-1.2 3.9 0"
-                stroke="currentColor" stroke-width="1.6" stroke-linecap="round" />
+            <path d="M2 7c.6.5 1.2 1 2.5 1C7 8 7 6 9.5 6c2.6 0 2.4 2 5 2 2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" />
+            <path d="M2 13c.6.5 1.2 1 2.5 1 2.5 0 2.5-2 5-2 2.6 0 2.4 2 5 2 2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" />
+            <path d="M2 19c.6.5 1.2 1 2.5 1 2.5 0 2.5-2 5-2 2.6 0 2.4 2 5 2 2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" />
         @break
 
         @case('run')
-            <circle cx="14.5" cy="4.5" r="1.6" fill="currentColor" />
-            <path d="M9 20l2.4-4 2-1.6-1-3.4-3 2.2M11.4 14.4 14 12l1.2 2.4 3.3 1M9.4 10.8 12 9.2l2.5.9"
-                stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" />
+            <rect x="3" y="6.5" width="18" height="11" rx="5.5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" />
+            <rect x="7.5" y="10" width="9" height="4" rx="2" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" />
         @break
 
         @case('kids')
-            <circle cx="9" cy="8" r="3" stroke="currentColor" stroke-width="1.6" />
-            <path d="M9 11v6M6 21l3-4 3 4M4 16.5A5 5 0 0 1 9 12" stroke="currentColor" stroke-width="1.6"
-                stroke-linecap="round" stroke-linejoin="round" />
-            <path d="M15 9l3 3-3 3M18 12h-6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"
-                stroke-linejoin="round" />
+            <path d="M4 4h16" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" />
+            <path d="M6 4l-2 17M18 4l2 17" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" />
+            <path d="M9.5 4v11M14.5 4v11" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" />
+            <path d="M7.5 15h4M12.5 15h4" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" />
         @break
 
         @case('road')
-            <path d="M9 3 5 21M15 3l4 18" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" />
-            <path d="M12 3v2.5M12 8.5v2.5M12 13.5V16M12 19v2" stroke="currentColor" stroke-width="1.7"
-                stroke-linecap="round" />
+            <path d="M8.5 3 4 21M15.5 3 20 21" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" />
+            <path d="M12 3v3M12 10v4M12 18v3" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" />
+        @break
+
+        @case('tree')
+            <path d="M8 19a4 4 0 0 1-2.24-7.32A3.5 3.5 0 0 1 9 6.03V6a3 3 0 1 1 6 0v.04a3.5 3.5 0 0 1 3.24 5.65A4 4 0 0 1 16 19Z" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" />
+            <path d="M12 19v3" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" />
         @break
 
         @case('water')
