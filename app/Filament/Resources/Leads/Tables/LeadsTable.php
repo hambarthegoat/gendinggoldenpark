@@ -21,6 +21,7 @@ class LeadsTable
                     ->label('No. WhatsApp')
                     ->searchable(),
                 TextColumn::make('email')
+                    ->label('Email')
                     ->searchable(),
                 TextColumn::make('house_type')
                     ->label('Tipe Diminati')

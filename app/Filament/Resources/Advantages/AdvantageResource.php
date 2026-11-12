@@ -18,6 +18,12 @@ class AdvantageResource extends Resource
 {
     protected static ?string $model = Advantage::class;
 
+    protected static ?string $modelLabel = 'Keunggulan';
+
+    protected static ?string $pluralModelLabel = 'Keunggulan';
+
+    protected static ?string $navigationLabel = 'Keunggulan';
+
     protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedSparkles;
 
     public static function form(Schema $schema): Schema

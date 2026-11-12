@@ -20,7 +20,7 @@ class LatestLeads extends TableWidget
 
     public function getTableHeading(): string
     {
-        return 'Leads Terbaru';
+        return 'Calon Pembeli Terbaru';
     }
 
     public function table(Table $table): Table

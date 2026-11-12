@@ -19,12 +19,12 @@ class DashboardOverview extends StatsOverviewWidget
         $newLeadsCount = Lead::where('status', 'new')->count();
 
         return [
-            Stat::make('Leads Baru', $newLeadsCount)
+            Stat::make('Calon Pembeli Baru', $newLeadsCount)
                 ->description('Belum dihubungi')
                 ->descriptionIcon(Heroicon::OutlinedInboxArrowDown)
                 ->color($newLeadsCount > 0 ? 'warning' : 'success'),
 
-            Stat::make('Total Leads', Lead::count())
+            Stat::make('Total Calon Pembeli', Lead::count())
                 ->description('Semua pesan masuk dari form kontak')
                 ->descriptionIcon(Heroicon::OutlinedUsers)
                 ->color('primary'),

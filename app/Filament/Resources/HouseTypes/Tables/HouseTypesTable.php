@@ -18,12 +18,15 @@ class HouseTypesTable
             ->columns([
                 ImageColumn::make('image'),
                 TextColumn::make('name')
+                    ->label('Nama')
                     ->searchable(),
                 TextColumn::make('price')
+                    ->label('Harga')
                     ->searchable(),
                 TextColumn::make('land'),
                 TextColumn::make('building'),
                 IconColumn::make('featured')
+                    ->label('Paling Diminati')
                     ->boolean(),
             ])
             ->defaultSort('sort_order')

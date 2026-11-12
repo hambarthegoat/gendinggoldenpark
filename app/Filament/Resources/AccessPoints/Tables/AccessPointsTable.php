@@ -15,6 +15,7 @@ class AccessPointsTable
         return $table
             ->columns([
                 TextColumn::make('text')
+                    ->label('Teks')
                     ->searchable(),
             ])
             ->defaultSort('sort_order')

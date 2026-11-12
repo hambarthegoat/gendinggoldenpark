@@ -17,6 +17,12 @@ class LeadResource extends Resource
 {
     protected static ?string $model = Lead::class;
 
+    protected static ?string $modelLabel = 'Calon Pembeli';
+
+    protected static ?string $pluralModelLabel = 'Calon Pembeli';
+
+    protected static ?string $navigationLabel = 'Calon Pembeli';
+
     protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedInboxArrowDown;
 
     public static function form(Schema $schema): Schema

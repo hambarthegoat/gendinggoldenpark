@@ -7,14 +7,14 @@
                 budget keluarga Anda.</p>
         </div>
 
-        <div class="mt-14 grid gap-8 lg:grid-cols-3">
+        <div class="mt-10 grid grid-cols-2 gap-3 sm:gap-5 md:mt-14 lg:grid-cols-3 lg:gap-8">
             @foreach ($houseTypes as $house)
                 <div
-                    class="group relative flex flex-col overflow-hidden rounded-3xl border {{ $house['featured'] ? 'border-gold-400 shadow-xl shadow-gold-300/40' : 'border-gold-200/70 shadow-sm' }} bg-white transition-all hover:-translate-y-1.5 hover:shadow-xl lg:{{ $house['featured'] ? 'scale-[1.02] z-10' : 'scale-100' }}">
+                    class="group relative flex flex-col overflow-hidden rounded-2xl md:rounded-3xl border {{ $house['featured'] ? 'border-gold-400 shadow-xl shadow-gold-300/40' : 'border-gold-200/70 shadow-sm' }} bg-white transition-all hover:-translate-y-1.5 hover:shadow-xl lg:{{ $house['featured'] ? 'scale-[1.02] z-10' : 'scale-100' }}">
 
                     @if ($house['featured'])
                         <span
-                            class="absolute right-5 top-5 z-10 rounded-full bg-ink-900 px-3 py-1 text-xs font-bold text-gold-300">
+                            class="absolute right-2 top-2 z-10 rounded-full bg-ink-900 px-2 py-0.5 text-[10px] md:right-5 md:top-5 md:px-3 md:py-1 md:text-xs font-bold text-gold-300">
                             Paling Diminati
                         </span>
                     @endif
@@ -36,11 +36,11 @@
                         <div class="absolute inset-x-0 bottom-0 h-16 bg-gradient-to-t from-black/25 to-transparent"></div>
                     </div>
 
-                    <div class="flex flex-1 flex-col p-7">
-                        <h3 class="font-display text-xl font-extrabold text-ink-900">{{ $house['name'] }}</h3>
-                        <p class="mt-1 text-lg font-bold text-gold-700">{{ $house['price'] }}</p>
+                    <div class="flex flex-1 flex-col p-3.5 sm:p-5 md:p-7">
+                        <h3 class="font-display text-base font-extrabold text-ink-900 md:text-xl">{{ $house['name'] }}</h3>
+                        <p class="mt-0.5 text-sm font-bold text-gold-700 md:mt-1 md:text-lg">{{ $house['price'] }}</p>
 
-                        <div class="mt-5 grid grid-cols-2 gap-y-3 text-sm text-ink-800/75">
+                        <div class="mt-3 grid grid-cols-2 gap-y-1.5 text-[11px] text-ink-800/75 md:mt-5 md:gap-y-3 md:text-sm">
                             <span>Luas Tanah</span>
                             <span class="text-right font-semibold text-ink-900">{{ $house['land'] }}</span>
                             <span>Luas Bangunan</span>
@@ -55,7 +55,7 @@
 
                         <a href="https://wa.me/{{ $settings->whatsapp }}?text={{ urlencode('Halo, saya tertarik dengan '.$house['name'].' di '.$settings->company_name) }}"
                             target="_blank" rel="noopener"
-                            class="mt-7 inline-flex items-center justify-center gap-2 rounded-full bg-gradient-to-r from-gold-500 to-gold-700 px-5 py-3 text-sm font-bold text-white shadow-md shadow-gold-500/30 transition-transform hover:-translate-y-0.5">
+                            class="mt-4 inline-flex items-center justify-center gap-1.5 rounded-full bg-gradient-to-r from-gold-500 to-gold-700 px-3 py-2 text-xs md:mt-7 md:gap-2 md:px-5 md:py-3 md:text-sm font-bold text-white shadow-md shadow-gold-500/30 transition-transform hover:-translate-y-0.5">
                             Tanya Ketersediaan
                             <x-icon name="arrow-right" class="h-4 w-4" />
                         </a>

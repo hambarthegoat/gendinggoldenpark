@@ -15,10 +15,13 @@ class TestimonialsTable
         return $table
             ->columns([
                 TextColumn::make('name')
+                    ->label('Nama')
                     ->searchable(),
                 TextColumn::make('role')
+                    ->label('Keterangan')
                     ->searchable(),
                 TextColumn::make('rating')
+                    ->label('Rating (bintang)')
                     ->numeric(),
             ])
             ->defaultSort('sort_order')

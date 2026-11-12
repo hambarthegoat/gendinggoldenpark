@@ -18,6 +18,12 @@ class GalleryItemResource extends Resource
 {
     protected static ?string $model = GalleryItem::class;
 
+    protected static ?string $modelLabel = 'Foto Galeri';
+
+    protected static ?string $pluralModelLabel = 'Galeri';
+
+    protected static ?string $navigationLabel = 'Galeri';
+
     protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedPhoto;
 
     public static function form(Schema $schema): Schema

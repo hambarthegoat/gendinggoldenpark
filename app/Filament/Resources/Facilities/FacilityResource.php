@@ -18,6 +18,12 @@ class FacilityResource extends Resource
 {
     protected static ?string $model = Facility::class;
 
+    protected static ?string $modelLabel = 'Fasilitas';
+
+    protected static ?string $pluralModelLabel = 'Fasilitas';
+
+    protected static ?string $navigationLabel = 'Fasilitas';
+
     protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedSquares2x2;
 
     public static function form(Schema $schema): Schema

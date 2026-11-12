@@ -15,10 +15,13 @@ class FacilitiesTable
         return $table
             ->columns([
                 TextColumn::make('icon')
+                    ->label('Ikon')
                     ->searchable(),
                 TextColumn::make('name')
+                    ->label('Nama')
                     ->searchable(),
                 TextColumn::make('desc')
+                    ->label('Deskripsi')
                     ->limit(60),
             ])
             ->defaultSort('sort_order')

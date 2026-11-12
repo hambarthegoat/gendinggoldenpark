@@ -15,10 +15,13 @@ class AdvantagesTable
         return $table
             ->columns([
                 TextColumn::make('icon')
+                    ->label('Ikon')
                     ->searchable(),
                 TextColumn::make('title')
+                    ->label('Judul')
                     ->searchable(),
                 TextColumn::make('desc')
+                    ->label('Deskripsi')
                     ->limit(60),
             ])
             ->defaultSort('sort_order')

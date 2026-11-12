@@ -12,6 +12,7 @@ class AccessPointForm
         return $schema
             ->components([
                 TextInput::make('text')
+                    ->label('Teks')
                     ->required()
                     ->columnSpanFull(),
             ]);

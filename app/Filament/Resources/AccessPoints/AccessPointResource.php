@@ -18,6 +18,12 @@ class AccessPointResource extends Resource
 {
     protected static ?string $model = AccessPoint::class;
 
+    protected static ?string $modelLabel = 'Titik Akses';
+
+    protected static ?string $pluralModelLabel = 'Titik Akses Lokasi';
+
+    protected static ?string $navigationLabel = 'Titik Akses Lokasi';
+
     protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedMapPin;
 
     public static function form(Schema $schema): Schema

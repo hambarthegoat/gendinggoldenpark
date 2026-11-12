@@ -18,6 +18,12 @@ class HouseTypeResource extends Resource
 {
     protected static ?string $model = HouseType::class;
 
+    protected static ?string $modelLabel = 'Tipe Rumah';
+
+    protected static ?string $pluralModelLabel = 'Tipe Rumah';
+
+    protected static ?string $navigationLabel = 'Tipe Rumah';
+
     protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedHome;
 
     public static function form(Schema $schema): Schema

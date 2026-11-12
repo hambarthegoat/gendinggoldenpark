@@ -12,8 +12,10 @@ class StatForm
         return $schema
             ->components([
                 TextInput::make('value')
+                    ->label('Angka')
                     ->required(),
                 TextInput::make('label')
+                    ->label('Keterangan')
                     ->required(),
             ]);
     }

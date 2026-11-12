@@ -18,6 +18,12 @@ class StatResource extends Resource
 {
     protected static ?string $model = Stat::class;
 
+    protected static ?string $modelLabel = 'Statistik';
+
+    protected static ?string $pluralModelLabel = 'Statistik';
+
+    protected static ?string $navigationLabel = 'Statistik';
+
     protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedPresentationChartBar;
 
     public static function form(Schema $schema): Schema

@@ -15,8 +15,10 @@ class StatsTable
         return $table
             ->columns([
                 TextColumn::make('value')
+                    ->label('Angka')
                     ->searchable(),
                 TextColumn::make('label')
+                    ->label('Keterangan')
                     ->searchable(),
             ])
             ->defaultSort('sort_order')
