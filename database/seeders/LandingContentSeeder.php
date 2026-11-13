@@ -120,12 +120,12 @@ class LandingContentSeeder extends Seeder
     private function seedGalleryItems(): void
     {
         $rows = [
-            ['label' => 'Gerbang Utama', 'from_class' => 'from-gold-300', 'to_class' => 'to-gold-600', 'span' => 'sm:col-span-2 sm:row-span-2'],
-            ['label' => 'Cluster Rumah', 'from_class' => 'from-amber-400', 'to_class' => 'to-gold-700', 'span' => ''],
-            ['label' => 'Taman Bermain', 'from_class' => 'from-gold-400', 'to_class' => 'to-amber-600', 'span' => ''],
-            ['label' => 'Jogging Track', 'from_class' => 'from-yellow-400', 'to_class' => 'to-gold-600', 'span' => ''],
-            ['label' => 'Kolam Renang', 'from_class' => 'from-gold-300', 'to_class' => 'to-amber-700', 'span' => ''],
-            ['label' => 'Masjid Kawasan', 'from_class' => 'from-amber-300', 'to_class' => 'to-gold-700', 'span' => 'sm:col-span-2'],
+            ['label' => 'Gerbang Utama', 'span' => 'sm:col-span-2 sm:row-span-2'],
+            ['label' => 'Cluster Rumah', 'span' => ''],
+            ['label' => 'Taman Bermain', 'span' => ''],
+            ['label' => 'Jogging Track', 'span' => ''],
+            ['label' => 'Kolam Renang', 'span' => ''],
+            ['label' => 'Masjid Kawasan', 'span' => 'sm:col-span-2'],
         ];
 
         foreach ($rows as $i => $row) {

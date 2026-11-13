@@ -15,7 +15,8 @@ class GalleryItemsTable
     {
         return $table
             ->columns([
-                ImageColumn::make('image'),
+                ImageColumn::make('image')
+                    ->label('Gambar'),
                 TextColumn::make('label')
                     ->label('Label')
                     ->searchable(),
@@ -23,7 +24,7 @@ class GalleryItemsTable
                     ->label('Ukuran Tile')
                     ->formatStateUsing(fn (string $state): string => match ($state) {
                         'sm:col-span-2 sm:row-span-2' => 'Besar',
-                        'sm:col-span-2' => 'Wide',
+                        'sm:col-span-2' => 'Lebar',
                         default => 'Normal',
                     }),
             ])

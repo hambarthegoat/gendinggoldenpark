@@ -74,7 +74,7 @@ class AdminPanelTest extends TestCase
             'gradient_classes' => 'from-gold-300 to-gold-600', 'featured' => false, 'sort_order' => 0,
         ]);
         Facility::create(['icon' => 'water', 'name' => 'Test Facility', 'desc' => 'Desc', 'sort_order' => 0]);
-        GalleryItem::create(['label' => 'Test Gallery', 'from_class' => 'from-gold-300', 'to_class' => 'to-gold-600', 'span' => '', 'sort_order' => 0]);
+        GalleryItem::create(['label' => 'Test Gallery', 'span' => '', 'sort_order' => 0]);
         AccessPoint::create(['text' => 'Test Access Point', 'sort_order' => 0]);
         Testimonial::create(['name' => 'Test Name', 'role' => 'Role', 'quote' => 'Quote', 'rating' => 4, 'sort_order' => 0]);
         Faq::create(['q' => 'Test Question', 'a' => 'Test Answer', 'sort_order' => 0]);
@@ -91,6 +91,19 @@ class AdminPanelTest extends TestCase
         $response->assertSee('Test Access Point');
         $response->assertSee('Test Name');
         $response->assertSee('Test Question');
+    }
+
+    public function test_gallery_form_shows_size_preview_without_gradient_fields(): void
+    {
+        $admin = User::factory()->create();
+
+        \Livewire\Livewire::actingAs($admin)
+            ->test(\App\Filament\Resources\GalleryItems\Pages\CreateGalleryItem::class)
+            ->assertSee('Pratinjau di galeri')
+            ->assertSee('Ukuran Tile')
+            ->assertDontSee('Kelas Gradient')
+            ->set('data.span', 'sm:col-span-2 sm:row-span-2')
+            ->assertSee('grid-column:1 / span 2;grid-row:1 / span 2');
     }
 
     public function test_lead_status_can_be_updated_from_admin(): void

@@ -10,7 +10,7 @@
         <div class="mt-14 grid auto-rows-[180px] grid-cols-2 gap-4 sm:grid-cols-4">
             @foreach ($galleryItems as $item)
                 <div
-                    class="{{ $item['span'] }} group relative overflow-hidden rounded-2xl bg-gradient-to-br {{ $item['from_class'] }} {{ $item['to_class'] }} shadow-sm">
+                    class="{{ $item['span'] }} group relative overflow-hidden rounded-2xl bg-gold-100 shadow-sm">
                     @if ($item->image)
                         <img src="{{ \Illuminate\Support\Facades\Storage::url($item->image) }}" class="absolute inset-0 h-full w-full object-cover" alt="{{ $item['label'] }}">
                     @endif
