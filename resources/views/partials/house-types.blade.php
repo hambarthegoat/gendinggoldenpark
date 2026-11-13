@@ -19,7 +19,7 @@
                         </span>
                     @endif
 
-                    <div class="relative aspect-[4/3] w-full overflow-hidden bg-gradient-to-br {{ $house['gradient_classes'] }}">
+                    <div class="relative aspect-[4/3] w-full overflow-hidden bg-gold-100">
                         @if ($house->image)
                             <img src="{{ \Illuminate\Support\Facades\Storage::url($house->image) }}" class="absolute inset-0 h-full w-full object-cover" alt="{{ $house['name'] }}">
                         @else

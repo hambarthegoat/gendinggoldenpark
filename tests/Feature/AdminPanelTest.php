@@ -71,7 +71,7 @@ class AdminPanelTest extends TestCase
         HouseType::create([
             'name' => 'Test Type', 'price' => 'Rp 1', 'land' => '1 m²', 'building' => '1 m²',
             'bedrooms' => 1, 'bathrooms' => 1, 'carport' => 1,
-            'gradient_classes' => 'from-gold-300 to-gold-600', 'featured' => false, 'sort_order' => 0,
+            'featured' => false, 'sort_order' => 0,
         ]);
         Facility::create(['icon' => 'water', 'name' => 'Test Facility', 'desc' => 'Desc', 'sort_order' => 0]);
         GalleryItem::create(['label' => 'Test Gallery', 'span' => '', 'sort_order' => 0]);

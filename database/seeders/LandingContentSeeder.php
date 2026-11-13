@@ -67,7 +67,6 @@ class LandingContentSeeder extends Seeder
                 'bedrooms' => 2,
                 'bathrooms' => 1,
                 'carport' => 1,
-                'gradient_classes' => 'from-amber-300 to-amber-500',
                 'featured' => false,
             ],
             [
@@ -78,7 +77,6 @@ class LandingContentSeeder extends Seeder
                 'bedrooms' => 3,
                 'bathrooms' => 2,
                 'carport' => 1,
-                'gradient_classes' => 'from-amber-400 to-yellow-600',
                 'featured' => true,
             ],
             [
@@ -89,7 +87,6 @@ class LandingContentSeeder extends Seeder
                 'bedrooms' => 4,
                 'bathrooms' => 2,
                 'carport' => 2,
-                'gradient_classes' => 'from-yellow-500 to-amber-700',
                 'featured' => false,
             ],
         ];

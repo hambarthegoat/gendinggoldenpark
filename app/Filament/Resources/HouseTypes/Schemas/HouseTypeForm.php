@@ -42,12 +42,8 @@ class HouseTypeForm
                     ->image()
                     ->disk('public')
                     ->directory('house-types')
-                    ->nullable()
-                    ->helperText('Opsional. Jika kosong, kartu akan memakai gradient warna di bawah sebagai latar.'),
-                TextInput::make('gradient_classes')
-                    ->label('Kelas Gradient')
-                    ->required()
-                    ->helperText('Kelas gradient Tailwind, contoh: from-amber-300 to-amber-500. Dipakai jika foto tidak diisi.'),
+                    ->imageEditor()
+                    ->required(),
                 Toggle::make('featured')
                     ->label('Paling Diminati')
                     ->helperText('Tandai sebagai "Paling Diminati".'),

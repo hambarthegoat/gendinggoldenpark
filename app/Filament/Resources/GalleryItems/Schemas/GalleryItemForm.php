@@ -56,7 +56,7 @@ class GalleryItemForm
         }
 
         $tile = sprintf(
-            '<div style="grid-column:1 / span %d;grid-row:1 / span %d;background:linear-gradient(135deg,#fbbf24,#d97706);border-radius:6px;display:flex;align-items:center;justify-content:center;color:#fff;font:700 12px sans-serif;box-shadow:0 2px 8px rgba(217,119,6,.4);z-index:1">%s</div>',
+            '<div style="grid-column:1 / span %d;grid-row:1 / span %d;background:#f2a90f;border-radius:6px;display:flex;align-items:center;justify-content:center;color:#fff;font:700 12px sans-serif;box-shadow:0 2px 8px rgba(217,119,6,.4);z-index:1">%s</div>',
             $size['cols'],
             $size['rows'],
             e($size['label'])

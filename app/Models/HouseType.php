@@ -9,7 +9,7 @@ class HouseType extends Model
     protected $fillable = [
         'name', 'price', 'land', 'building',
         'bedrooms', 'bathrooms', 'carport',
-        'image', 'gradient_classes', 'featured', 'sort_order',
+        'image', 'featured', 'sort_order',
     ];
 
     protected $casts = [
