@@ -137,7 +137,7 @@ class AdminPanelTest extends TestCase
         $admin = User::factory()->create();
         $lead = Lead::create([
             'name' => 'Lead Name', 'phone' => '0812', 'email' => null,
-            'house_type' => null, 'message' => null,
+            'message' => null,
         ]);
 
         $this->assertEquals('new', $lead->fresh()->status);

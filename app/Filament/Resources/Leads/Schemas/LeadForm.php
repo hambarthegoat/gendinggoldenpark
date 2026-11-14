@@ -24,9 +24,6 @@ class LeadForm
                     ->label('Email')
                     ->email()
                     ->disabled(),
-                TextInput::make('house_type')
-                    ->label('Tipe yang Diminati')
-                    ->disabled(),
                 Textarea::make('message')
                     ->label('Pesan')
                     ->disabled()

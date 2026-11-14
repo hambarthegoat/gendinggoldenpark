@@ -23,9 +23,6 @@ class LeadsTable
                 TextColumn::make('email')
                     ->label('Email')
                     ->searchable(),
-                TextColumn::make('house_type')
-                    ->label('Tipe Diminati')
-                    ->searchable(),
                 SelectColumn::make('status')
                     ->options([
                         'new' => 'Baru',

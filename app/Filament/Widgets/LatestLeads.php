@@ -34,9 +34,6 @@ class LatestLeads extends TableWidget
                     ->searchable(),
                 TextColumn::make('phone')
                     ->label('No. WhatsApp'),
-                TextColumn::make('house_type')
-                    ->label('Tipe Diminati')
-                    ->placeholder('—'),
                 SelectColumn::make('status')
                     ->options([
                         'new' => 'Baru',

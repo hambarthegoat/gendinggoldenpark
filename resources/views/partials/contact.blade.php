@@ -96,19 +96,6 @@
                     </div>
 
                     <div>
-                        <label for="house_type" class="mb-1.5 block text-sm font-semibold text-ink-800">Tipe yang
-                            Diminati</label>
-                        <select id="house_type" name="house_type"
-                            class="w-full rounded-xl border border-gold-200 bg-gold-50/50 px-4 py-3 text-sm text-ink-900 focus:border-gold-500 focus:bg-white focus:outline-none focus:ring-2 focus:ring-gold-500/30">
-                            <option value="">Pilih tipe rumah</option>
-                            @foreach ($houseTypes as $house)
-                                <option value="{{ $house['name'] }}" @selected(old('house_type') === $house['name'])>
-                                    {{ $house['name'] }}</option>
-                            @endforeach
-                        </select>
-                    </div>
-
-                    <div>
                         <label for="message" class="mb-1.5 block text-sm font-semibold text-ink-800">Pesan
                             <span class="font-normal text-ink-800/40">(opsional)</span></label>
                         <textarea id="message" name="message" rows="3"

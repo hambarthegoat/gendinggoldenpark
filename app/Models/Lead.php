@@ -10,7 +10,6 @@ class Lead extends Model
         'name',
         'phone',
         'email',
-        'house_type',
         'message',
         'status',
     ];

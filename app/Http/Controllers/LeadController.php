@@ -14,7 +14,6 @@ class LeadController extends Controller
             'name' => ['required', 'string', 'max:100'],
             'phone' => ['required', 'string', 'max:20'],
             'email' => ['nullable', 'email', 'max:150'],
-            'house_type' => ['nullable', 'string', 'max:50'],
             'message' => ['nullable', 'string', 'max:1000'],
         ]);
 
