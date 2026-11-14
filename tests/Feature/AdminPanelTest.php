@@ -106,6 +106,33 @@ class AdminPanelTest extends TestCase
             ->assertSee('grid-column:1 / span 2;grid-row:1 / span 2');
     }
 
+    public function test_gallery_item_can_be_created_with_default_and_chosen_size(): void
+    {
+        $admin = User::factory()->create();
+        \Illuminate\Support\Facades\Storage::fake('public');
+
+        $page = \Livewire\Livewire::actingAs($admin)
+            ->test(\App\Filament\Resources\GalleryItems\Pages\CreateGalleryItem::class)
+            ->fillForm([
+                'label' => 'Normal',
+                'image' => \Illuminate\Http\UploadedFile::fake()->image('a.jpg'),
+            ])
+            ->call('create')
+            ->assertHasNoFormErrors();
+        $this->assertSame('', GalleryItem::where('label', 'Normal')->first()->span);
+
+        $page = \Livewire\Livewire::actingAs($admin)
+            ->test(\App\Filament\Resources\GalleryItems\Pages\CreateGalleryItem::class)
+            ->fillForm([
+                'label' => 'Lebar',
+                'image' => \Illuminate\Http\UploadedFile::fake()->image('b.jpg'),
+                'span' => 'sm:col-span-2',
+            ])
+            ->call('create')
+            ->assertHasNoFormErrors();
+        $this->assertSame('sm:col-span-2', GalleryItem::where('label', 'Lebar')->first()->span);
+    }
+
     public function test_house_type_price_and_area_are_formatted(): void
     {
         $this->assertSame('Rp1.000.000', \App\Models\HouseType::formatRupiah('1000000'));

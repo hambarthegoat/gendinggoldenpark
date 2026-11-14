@@ -12,8 +12,11 @@ use Illuminate\Support\HtmlString;
 
 class GalleryItemForm
 {
+    // Kunci non-kosong agar lolos validasi "required"; disimpan ke DB sebagai '' (tanpa kelas tambahan).
+    public const NORMAL = 'normal';
+
     public const SIZES = [
-        '' => ['label' => 'Normal', 'desc' => 'Kotak kecil (1 × 1)', 'cols' => 1, 'rows' => 1],
+        self::NORMAL => ['label' => 'Normal', 'desc' => 'Kotak kecil (1 × 1)', 'cols' => 1, 'rows' => 1],
         'sm:col-span-2' => ['label' => 'Lebar', 'desc' => 'Memanjang ke samping (2 × 1)', 'cols' => 2, 'rows' => 1],
         'sm:col-span-2 sm:row-span-2' => ['label' => 'Besar', 'desc' => 'Kotak besar (2 × 2)', 'cols' => 2, 'rows' => 2],
     ];
@@ -36,7 +39,9 @@ class GalleryItemForm
                     ->label('Ukuran Tile')
                     ->options(array_map(fn (array $s): string => $s['label'], self::SIZES))
                     ->descriptions(array_map(fn (array $s): string => $s['desc'], self::SIZES))
-                    ->default('')
+                    ->default(self::NORMAL)
+                    ->afterStateHydrated(fn (Radio $component, $state) => $component->state(($state === null || $state === '') ? self::NORMAL : $state))
+                    ->dehydrateStateUsing(fn ($state): string => ($state === self::NORMAL || $state === null) ? '' : (string) $state)
                     ->live()
                     ->required(),
                 Html::make(fn (Get $get): HtmlString => self::preview((string) $get('span'))),
@@ -48,7 +53,7 @@ class GalleryItemForm
      */
     public static function preview(string $span): HtmlString
     {
-        $size = self::SIZES[$span] ?? self::SIZES[''];
+        $size = self::SIZES[$span] ?? self::SIZES[self::NORMAL];
         $cells = '';
 
         for ($i = 0; $i < 12; $i++) {
