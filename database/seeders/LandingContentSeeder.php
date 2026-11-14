@@ -61,9 +61,9 @@ class LandingContentSeeder extends Seeder
         $rows = [
             [
                 'name' => 'Tipe 36/72',
-                'price' => 'Mulai Rp 385 Juta',
-                'land' => '72 m²',
-                'building' => '36 m²',
+                'price' => '385000000',
+                'land' => '72',
+                'building' => '36',
                 'bedrooms' => 2,
                 'bathrooms' => 1,
                 'carport' => 1,
@@ -71,9 +71,9 @@ class LandingContentSeeder extends Seeder
             ],
             [
                 'name' => 'Tipe 45/90',
-                'price' => 'Mulai Rp 525 Juta',
-                'land' => '90 m²',
-                'building' => '45 m²',
+                'price' => '525000000',
+                'land' => '90',
+                'building' => '45',
                 'bedrooms' => 3,
                 'bathrooms' => 2,
                 'carport' => 1,
@@ -81,9 +81,9 @@ class LandingContentSeeder extends Seeder
             ],
             [
                 'name' => 'Tipe 60/120',
-                'price' => 'Mulai Rp 745 Juta',
-                'land' => '120 m²',
-                'building' => '60 m²',
+                'price' => '745000000',
+                'land' => '120',
+                'building' => '60',
                 'bedrooms' => 4,
                 'bathrooms' => 2,
                 'carport' => 2,

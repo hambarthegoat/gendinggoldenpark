@@ -2,6 +2,7 @@
 
 namespace App\Filament\Resources\HouseTypes\Tables;
 
+use App\Models\HouseType;
 use Filament\Actions\BulkActionGroup;
 use Filament\Actions\DeleteBulkAction;
 use Filament\Actions\EditAction;
@@ -22,9 +23,14 @@ class HouseTypesTable
                     ->searchable(),
                 TextColumn::make('price')
                     ->label('Harga')
+                    ->formatStateUsing(fn (?string $state): string => HouseType::formatRupiah($state))
                     ->searchable(),
-                TextColumn::make('land'),
-                TextColumn::make('building'),
+                TextColumn::make('land')
+                    ->label('Luas Tanah')
+                    ->formatStateUsing(fn (?string $state): string => HouseType::formatArea($state)),
+                TextColumn::make('building')
+                    ->label('Luas Bangunan')
+                    ->formatStateUsing(fn (?string $state): string => HouseType::formatArea($state)),
                 IconColumn::make('featured')
                     ->label('Paling Diminati')
                     ->boolean(),

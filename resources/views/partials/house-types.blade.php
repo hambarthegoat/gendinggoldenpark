@@ -38,13 +38,13 @@
 
                     <div class="flex flex-1 flex-col p-3.5 sm:p-5 md:p-7">
                         <h3 class="font-display text-base font-extrabold text-ink-900 md:text-xl">{{ $house['name'] }}</h3>
-                        <p class="mt-0.5 text-sm font-bold text-gold-700 md:mt-1 md:text-lg">{{ $house['price'] }}</p>
+                        <p class="mt-0.5 text-sm font-bold text-gold-700 md:mt-1 md:text-lg">{{ $house->price_formatted }}</p>
 
                         <div class="mt-3 grid grid-cols-2 gap-y-1.5 text-[11px] text-ink-800/75 md:mt-5 md:gap-y-3 md:text-sm">
                             <span>Luas Tanah</span>
-                            <span class="text-right font-semibold text-ink-900">{{ $house['land'] }}</span>
+                            <span class="text-right font-semibold text-ink-900">{{ $house->land_formatted }}</span>
                             <span>Luas Bangunan</span>
-                            <span class="text-right font-semibold text-ink-900">{{ $house['building'] }}</span>
+                            <span class="text-right font-semibold text-ink-900">{{ $house->building_formatted }}</span>
                             <span>Kamar Tidur</span>
                             <span class="text-right font-semibold text-ink-900">{{ $house['bedrooms'] }}</span>
                             <span>Kamar Mandi</span>

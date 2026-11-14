@@ -1,4 +1,4 @@
-<section class="relative overflow-hidden bg-ink-900 pt-32 pb-24 md:pt-40 md:pb-32">
+<section class="relative flex min-h-[100vh] min-h-svh items-center overflow-hidden bg-ink-900 pt-24 pb-10 sm:pt-28 sm:pb-12 lg:pt-[clamp(4.5rem,12svh,7rem)] lg:pb-[clamp(0.75rem,3svh,3rem)]">
     <!-- Decorative gradient background -->
     <div class="pointer-events-none absolute inset-0">
         <div class="absolute -top-32 -right-32 h-[28rem] w-[28rem] rounded-full bg-gold-500/30 blur-3xl"></div>
@@ -7,8 +7,8 @@
         <div class="absolute inset-0 bg-gradient-to-b from-ink-900/0 via-ink-900/40 to-ink-900"></div>
     </div>
 
-    <div class="relative mx-auto max-w-7xl px-5 md:px-8">
-        <div class="grid items-center gap-14 lg:grid-cols-2">
+    <div class="relative mx-auto w-full max-w-7xl px-5 md:px-8">
+        <div class="grid items-center gap-10 lg:grid-cols-2 lg:gap-14">
             <div class="animate-fade-up">
                 <span
                     class="inline-flex items-center gap-2 rounded-full bg-gold-500/15 px-4 py-1.5 text-sm font-semibold text-gold-300 ring-1 ring-gold-500/40">
@@ -16,18 +16,18 @@
                     {{ $settings->hero_badge }}
                 </span>
 
-                <h1 class="mt-6 font-display text-4xl font-extrabold leading-[1.1] text-white sm:text-5xl lg:text-6xl">
+                <h1 class="mt-[clamp(0.75rem,2.5svh,1.25rem)] font-display text-4xl font-extrabold leading-[1.1] text-white sm:text-5xl lg:text-[clamp(2.25rem,7.5svh,3.75rem)]">
                     {{ $settings->hero_headline_prefix }}
                     <span class="bg-gradient-to-r from-gold-300 via-gold-400 to-gold-600 bg-clip-text text-transparent">
                         {{ $settings->hero_headline_highlight }}
                     </span>
                 </h1>
 
-                <p class="mt-6 max-w-xl text-lg leading-relaxed text-gold-100/80">
+                <p class="mt-[clamp(0.5rem,2.5svh,1.25rem)] max-w-xl text-base leading-relaxed text-gold-100/80 sm:text-lg">
                     {{ $settings->hero_subtext }}
                 </p>
 
-                <div class="mt-9 flex flex-col gap-4 sm:flex-row sm:justify-start">
+                <div class="mt-[clamp(1rem,3.5svh,1.75rem)] flex flex-col gap-3 sm:flex-row sm:justify-start sm:gap-4">
                     <a href="#tipe-rumah"
                         class="inline-flex items-center justify-center gap-2 rounded-full bg-gradient-to-r from-gold-400 to-gold-600 px-7 py-3.5 text-base font-bold text-ink-900 shadow-xl shadow-gold-600/30 hover:-translate-y-0.5 hover:shadow-gold-500/40 transition-all">
                         {{ $settings->hero_cta_primary_label }}
@@ -41,7 +41,7 @@
                     </a>
                 </div>
 
-                <div class="mt-12 grid grid-cols-2 gap-6 sm:grid-cols-4">
+                <div class="mt-8 grid grid-cols-2 gap-5 sm:grid-cols-4 lg:mt-[clamp(1rem,4svh,2.5rem)]">
                     @foreach ($stats as $stat)
                         <div>
                             <p class="font-display text-2xl font-extrabold text-gold-300 sm:text-3xl">{{ $stat['value'] }}</p>
@@ -51,11 +51,11 @@
                 </div>
             </div>
 
-            <div class="relative animate-fade-up [animation-delay:150ms]">
+            <div class="relative mx-auto w-full max-w-sm animate-fade-up [animation-delay:150ms] lg:max-w-none lg:w-auto lg:justify-self-center">
                 <div class="absolute -inset-4 rounded-[2.5rem] bg-gradient-to-br from-gold-400/40 to-gold-700/10 blur-2xl">
                 </div>
                 <div
-                    class="relative aspect-[4/5] w-full overflow-hidden rounded-[2rem] bg-gradient-to-br from-gold-200 via-gold-400 to-gold-700 shadow-2xl ring-1 ring-white/10">
+                    class="relative aspect-[4/5] w-full overflow-hidden rounded-[2rem] lg:h-[min(62svh,42rem)] lg:w-auto bg-gradient-to-br from-gold-200 via-gold-400 to-gold-700 shadow-2xl ring-1 ring-white/10">
                     <div class="absolute inset-0 bg-noise opacity-20"></div>
                     @if ($settings->hero_image)
                         <img src="{{ \Illuminate\Support\Facades\Storage::disk('public')->url($settings->hero_image) }}"

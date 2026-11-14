@@ -69,7 +69,7 @@ class AdminPanelTest extends TestCase
         Stat::create(['value' => '1', 'label' => 'Test Stat', 'sort_order' => 0]);
         Advantage::create(['icon' => 'shield', 'title' => 'Test Advantage', 'desc' => 'Desc', 'sort_order' => 0]);
         HouseType::create([
-            'name' => 'Test Type', 'price' => 'Rp 1', 'land' => '1 m²', 'building' => '1 m²',
+            'name' => 'Test Type', 'price' => '1000000', 'land' => '72', 'building' => '36',
             'bedrooms' => 1, 'bathrooms' => 1, 'carport' => 1,
             'featured' => false, 'sort_order' => 0,
         ]);
@@ -104,6 +104,32 @@ class AdminPanelTest extends TestCase
             ->assertDontSee('Kelas Gradient')
             ->set('data.span', 'sm:col-span-2 sm:row-span-2')
             ->assertSee('grid-column:1 / span 2;grid-row:1 / span 2');
+    }
+
+    public function test_house_type_price_and_area_are_formatted(): void
+    {
+        $this->assertSame('Rp1.000.000', \App\Models\HouseType::formatRupiah('1000000'));
+        $this->assertSame('Rp525.000.000', \App\Models\HouseType::formatRupiah('525000000'));
+        $this->assertSame('72 m²', \App\Models\HouseType::formatArea('72'));
+        $this->assertSame('36,5 m²', \App\Models\HouseType::formatArea('36.5'));
+    }
+
+    public function test_house_type_name_dropdown_and_custom_option(): void
+    {
+        $this->assertSame('Blok B', \App\Filament\Resources\HouseTypes\Schemas\HouseTypeForm::resolveName(['name_choice' => 'Blok B', 'name_custom' => 'x'])['name']);
+        $this->assertSame('Tipe 36/72', \App\Filament\Resources\HouseTypes\Schemas\HouseTypeForm::resolveName(['name_choice' => 'custom', 'name_custom' => ' Tipe 36/72 '])['name']);
+
+        $filled = \App\Filament\Resources\HouseTypes\Schemas\HouseTypeForm::fillName(['name' => 'Tipe 45/90']);
+        $this->assertSame('custom', $filled['name_choice']);
+        $this->assertSame('Tipe 45/90', $filled['name_custom']);
+
+        $admin = User::factory()->create();
+        \Livewire\Livewire::actingAs($admin)
+            ->test(\App\Filament\Resources\HouseTypes\Pages\CreateHouseType::class)
+            ->assertSee('Isi sendiri')
+            ->assertDontSee('Nama (isi sendiri)')
+            ->set('data.name_choice', 'custom')
+            ->assertSee('Nama (isi sendiri)');
     }
 
     public function test_lead_status_can_be_updated_from_admin(): void
